@@ -50,15 +50,31 @@ class AutoAdmin extends Admin
 
         if($config) {
             foreach($config['fields'] as $field) {
-                    $list->add($field['property'], array_key_exists('type', $field) ? $field['type'] : null, array_key_exists('type_options', $field) ? $field['type_options'] : null);
+                if(is_array($field)) {
+                    $list->add($field['property'],
+                        array_key_exists('type', $field) ? $field['type'] : null,
+                        array_key_exists('type_options', $field) ? $field['type_options'] : null
+                    );
+                } else {
+                    $list->add($field);
+                }
+
             }
             $actions = array();
 
             foreach($config['actions'] as $action) {
-                $actions[$action] = array();
+                dump($action);
+                if(is_array($action)) {
+                    $actions = array_merge($actions, $action);
+                } else {
+                    $actions[$action] = array();
+                }
             }
 
-            $list->add('_actions', 'actions', array(
+            dump($config['actions']);
+            dump($actions);
+
+            $list->add('_action', 'actions', array(
                 'actions' => $actions,
             ));
         }

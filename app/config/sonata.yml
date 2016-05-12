@@ -1,0 +1,33 @@
+sonata_easy_admin:
+    entities:
+        User:
+            class: AppBundle\Entity\User
+            list:
+                fields:
+                    - id
+                    - username
+                    - email
+                    - enabled
+                actions: [show: {}, 'edit', 'delete']
+            edit:
+                fields:
+                    - { property: id, type_options: { } }
+                    - { property: username, type_options: { } }
+                    - { property: email, type_options: { } }
+                    - { property: enabled, type_options: { } }
+                    - { property: 'plain_password', type: 'text', type_options: { required: true } }
+                actions: ['-delete']
+            filter:
+                fields:
+                    - username
+                    - email
+                    - enabled
+                    - roles
+            show:
+                fields:
+                    - username
+                    - email
+                    - enabled
+                    - { property: 'last_login', type: 'datetime' }
+                    - roles
+                actions: ['-delete']
