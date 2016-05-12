@@ -50,10 +50,10 @@ app/console assets:install --symlink
 app/console cache:clear --env=dev
 ```
 
-9) Configure Web server and fire up application
+8) Configure Web server and fire up application
 
 ```bash
-app/conmsole server:run
+app/console server:run
 ```
 
  Username: admin
