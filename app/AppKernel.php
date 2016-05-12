@@ -16,7 +16,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
-            new GTX\SonataEasyAdminBundle\SonataEasyAdminBundle(),
+            new Caxy\SonataEasyAdminBundle\SonataEasyAdminBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
 

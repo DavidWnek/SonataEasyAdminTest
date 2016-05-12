@@ -1,6 +1,6 @@
 <?php
 
-namespace GTX\SonataEasyAdminBundle\DependencyInjection;
+namespace Caxy\SonataEasyAdminBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

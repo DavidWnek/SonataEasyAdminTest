@@ -1,10 +1,10 @@
 <?php
 
-namespace GTX\SonataEasyAdminBundle;
+namespace Caxy\SonataEasyAdminBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use GTX\SonataEasyAdminBundle\DependencyInjection\AdminBuilderPass;
+use Caxy\SonataEasyAdminBundle\DependencyInjection\AdminBuilderPass;
 
 class SonataEasyAdminBundle extends Bundle
 {

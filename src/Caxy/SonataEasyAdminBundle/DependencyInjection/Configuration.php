@@ -1,6 +1,6 @@
 <?php
 
-namespace GTX\SonataEasyAdminBundle\DependencyInjection;
+namespace Caxy\SonataEasyAdminBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -21,17 +21,20 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('sonata_easy_admin');
         $rootNode
             ->children()
-            ->arrayNode('entities')
-            ->prototype('array')
-            ->children()
-            ->scalarNode('class')->end()
-            ->variableNode('list')->end()
-            ->variableNode('edit')->end()
-            ->variableNode('show')->end()
-            ->variableNode('filter')->end()
-            ->end()
-            ->end()
-            ->end()
+                ->arrayNode('entities')
+                    ->prototype('array')
+                        ->children()
+                            ->scalarNode('class')->end()
+                            ->scalarNode('route_name')->end()
+                            ->scalarNode('route_pattern')->end()
+                            ->variableNode('batch_actions')->end()
+                            ->variableNode('list')->end()
+                            ->variableNode('edit')->end()
+                            ->variableNode('show')->end()
+                            ->variableNode('filter')->end()
+                        ->end()
+                    ->end()
+                ->end()
             ->end()
         ;
 

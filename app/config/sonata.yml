@@ -2,6 +2,9 @@ sonata_easy_admin:
     entities:
         User:
             class: AppBundle\Entity\User
+            batch_actions:
+                - '-delete'
+                - '-download'
             list:
                 fields:
                     - id
